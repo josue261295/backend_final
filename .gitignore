@@ -1,0 +1,5 @@
+node_modules/
+.env
+pgadmin/
+postgres/
+docker-compose.yml
