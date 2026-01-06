@@ -1,0 +1,15 @@
+import { envs } from "./envs.js";
+
+export const corsConfig = {
+  origin: (origin, callback) => {
+    const whitelist = [envs.FRONTEND_URL];
+    if (process.argv[2] === "--api") {
+      whitelist.push(undefined);
+    }
+    if (whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
