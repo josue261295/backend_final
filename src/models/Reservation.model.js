@@ -1,10 +1,10 @@
 import { Model, DataTypes } from "sequelize";
 import { db } from "../config/db.js";
 
-const RESERVATION_STATUS = {
-  RECIBIDO: "RECIBIDO",
-  PREPARANDO: "PREPARANDO",
-  COMPLETADO: "COMPLETADO",
+export const RESERVATION_STATUS = {
+  RECIBIDO: "recibido",
+  PREPARANDO: "preparando",
+  COMPLETADO: "completado",
 };
 
 class Reservation extends Model {}
@@ -37,6 +37,7 @@ Reservation.init(
     sequelize: db,
     modelName: "Reservation",
     tableName: "reservations",
+    timestamps: true,
   }
 );
 
